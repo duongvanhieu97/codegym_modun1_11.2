@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    function checkNT(number) {
+        let dem = 0;
+        let demSnt = 0;
+        for (let i = 2; i < 1000; i++) {
+            if (demSnt < number) {
+                for (let j = 1; j <= i; j++) {
+                    if (i % j === 0) {
+                        dem += 1;
+                    }
+                }
+                if (dem === 2) {
+                    document.write(i + "<br>");
+                    demSnt += 1;
+                }
+                dem = 0;
+            } else {
+                break;
+            }
+        }
+    }
+
+    let number = parseInt(prompt("Nhập n số nguyên tố đầu tiên: "))
+    checkNT(number);
+</script>
+</body>
+</html>
